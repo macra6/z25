@@ -1,8 +1,8 @@
 # Заполнить список вещественных чисел вводом с клавиатуры.
 # Сколько элементов списка больше по модулю максимального числа.
 
-spisok = []             # Для всех чисел
-spisok_big = []         # Для чисел больших махимального
+_list = []             # Для всех чисел
+list_big = []         # Для чисел больших махимального
 print("Введите числа, когда закончите нажмите Enter.")
 
 while True:
@@ -11,20 +11,19 @@ while True:
         if a == "":
             break
         else:
-            spisok.append(float(a))
+            _list.append(float(a))
     except ValueError:
         print("Вводите только числа!")
 
 max_unit = float(0)
+for item in _list:
+    if max_unit < item:
+        max_unit = item
 
-for i in range(len(spisok)):
-    if max_unit < spisok[i]:
-        max_unit = spisok[i]
+for i in _list:
+    if abs(i) > max_unit:
+        list_big.append(i)
 
-for i in range(len(spisok)):
-    if abs(spisok[i]) > max_unit:
-        spisok_big.append(spisok[i])
-
-print("Для списка " + str(spisok))
+print("Для списка " + str(_list))
 print("Элементов списка больше по модулю максимального числа: "
-      + str(len(spisok_big)))
+      + str(len(list_big)))

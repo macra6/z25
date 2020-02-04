@@ -6,25 +6,25 @@ spisok_min = []         # Для чисел меньше среднего
 print("Введите числа, когда закончите нажмите Enter.")
 
 while True:
-    try:
-        a = input()
-        if a == "":
-            break
-        else:
+    a = input()
+    if a == "":
+        break
+    else:
+        try:
             spisok.append(float(a))
-    except ValueError:
-        print("Вводите только числа!")
+        except ValueError:
+            print("Вводите только числа!")
 
 srednee_arifmetick = 0
 
-for i in range(len(spisok)):
-    srednee_arifmetick += spisok[i]
+for item in spisok:
+    srednee_arifmetick += item
 
 srednee_arifmetick /= len(spisok)
 
-for i in range(len(spisok)):
-    if spisok[i] < srednee_arifmetick:
-        spisok_min.append(spisok[i])
+for i in spisok:
+    if i < srednee_arifmetick:
+        spisok_min.append(i)
 
 print("Для списка: " + str(spisok))
 print("Элементы, которые меньше среднего арифметического:")

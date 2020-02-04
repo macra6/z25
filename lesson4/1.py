@@ -12,10 +12,8 @@ while True:
     else:
         break
 
-if number1 == 0:
-    print("Первое число должно быть не 0")
-elif number2 == 0:
-    print("Второе число должно быть не 0")
+if number2 == 0:
+    print("Второе число должно быть не 0 (делить на 0 нельзя)")
 elif number1 % number2 == 0:
     print(str(number1) + " делиться на " + str(number2) + " без остатка:")
     print(str(number1) + " / " + str(number2) + " = " + str(number1//number2))
