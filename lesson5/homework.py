@@ -4,8 +4,14 @@
 """
 
 
-def custom_range(*args, **kwargs):
-    pass
+def custom_range(a, b=0, c=1):
+    _list = []
+    if a > b:
+        a, b = b, a
+    while a < b:
+        _list.append(a)
+        a += c
+    return _list
 
 
 """
@@ -16,8 +22,15 @@ accum("cwAt") -> "C-Ww-Aaa-Tttt"
 """
 
 
-def accum(*args, **kwargs):
-    pass
+def accum(_list):
+    _list_new = ""
+    count = 1
+    for i in _list:
+        i *= count
+        i = i.title()
+        _list_new += i + "-"
+        count += 1
+    return _list_new[0:-1]
 
 
 """
@@ -38,8 +51,17 @@ there are 10 matches in the championship
 """
 
 
-def points(*args, **kwargs):
-    pass
+def points(_list):
+    count = 0
+    for i in _list:
+        x, y = int(i[0]), int(i[2])
+        if x > y:
+            count += 3
+        elif x < y:
+            None        # PyCharm ругается на None, хотя flake8 ничего не выдал
+        else:
+            count += 1
+    return count
 
 
 """
@@ -49,8 +71,17 @@ def points(*args, **kwargs):
 """
 
 
-def max_number_count(*args, **kwargs):
-    pass
+def max_number_count(_list):
+    _dict = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+    for i in _list:
+        _dict[i] += 1
+    max_amount = 0
+    position = 0
+    for i in _dict:
+        if _dict[i] > max_amount:
+            max_amount = _dict[i]
+            position = i
+    return position, max_amount
 
 
 if __name__ == '__main__':
