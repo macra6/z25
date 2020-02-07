@@ -72,9 +72,12 @@ def points(_list):
 
 
 def max_number_count(_list):
-    _dict = {a: 0 for a in range(1, len(_list)+1)}
-    for i in _list:
-        _dict[i] += 1
+    _dict = {}
+    for a in _list:
+        try:
+            _dict[a] += 1
+        except KeyError:
+            _dict[a] = 1
     max_amount = 0
     position = 0
     for i in _dict:
