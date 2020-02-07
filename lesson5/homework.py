@@ -58,7 +58,7 @@ def points(_list):
         if x > y:
             count += 3
         elif x < y:
-            None        # PyCharm ругается на None, хотя flake8 ничего не выдал
+            pass
         else:
             count += 1
     return count
@@ -72,7 +72,7 @@ def points(_list):
 
 
 def max_number_count(_list):
-    _dict = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+    _dict = {a: 0 for a in range(1, len(_list)+1)}
     for i in _list:
         _dict[i] += 1
     max_amount = 0
