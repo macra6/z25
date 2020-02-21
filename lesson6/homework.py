@@ -27,13 +27,27 @@ two 2 <class "int">
 
 print_given()
 """
+class Print_given:
+
+    def __init__(self, unit):
+        self.type = type(unit)
+        self.unit = unit
+
+    def printing(self):
+        print(self.type, self.unit)
+
+element = (1, 2, 3, [1, 2, 3], "one", "two", "three")
+
+for i in element:
+    a = Print_given(i)
+    a.printing()
 
 
-def print_given(*args, **kwargs):
-    for arg in args:
-        print(arg, type(arg))
-    for key, value in kwargs.items():
-        print(key, value, type(value))
+# def print_given(*args, **kwargs):
+#     for arg in args:
+#         print(arg, type(arg))
+#     for key, value in kwargs.items():
+#         print(key, value, type(value))
 
 
 """
