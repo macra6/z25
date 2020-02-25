@@ -28,10 +28,27 @@ with Timer("Time: {}") as timer:
     print(timer.now())  # Time: 5.71 sec
 """
 
+import time
 
-if __name__ == '__main__':
-    assert max_number([234, 123, 98]) == 98234123
-    assert max_number([1, 2, 3, 4]) == 4321
-    assert max_number([]) is None
-    assert max_number([98, 9, 34]) == 99834
-    print('max_number - OK')
+
+class Timer:
+    def __init__(self, item):
+        self.start = 0
+        self.text = item
+
+    def __enter__(self):
+        self.start = time.time()
+        return self
+
+    def now(self):
+        return self.text.format(f"{time.time() - self.start} sec")
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        pass
+
+# if __name__ == '__main__':
+#     assert max_number([234, 123, 98]) == 98234123
+#     assert max_number([1, 2, 3, 4]) == 4321
+#     assert max_number([]) is None
+#     assert max_number([98, 9, 34]) == 99834
+#     print('max_number - OK')
