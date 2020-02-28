@@ -43,7 +43,7 @@ class FibonacciNumber(Fibonacci):
 # counter = Fibonacci(7)
 # for i in counter:
 #     print(i, end=" ")
-#
+
 # print("\n2й итератор", end=": ")
 # counter1 = FibonacciNumber(7)
 # for a in counter1:
@@ -155,9 +155,9 @@ class BinomialCoefficients:
             return current
 
 
-x = 12
-binom = BinomialCoefficients(x)
-for i in binom:
-    difference = x - len(i)
-    print(" " * difference, end="")
-    print(i)
+# x = 12
+# binom = BinomialCoefficients(x)
+# for i in binom:
+#     difference = x - len(i)
+#     print(" " * difference, end="")
+#     print(i)
