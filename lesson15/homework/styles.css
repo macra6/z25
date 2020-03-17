@@ -2,3 +2,23 @@ img.task {
     height: 200px;
     /*max-width: 500px;*/
 }
+ol {
+    list-style-type: upper-roman;
+}
+.link a{
+    display: block;
+    color: blue;
+}
+table, th, td {
+    border: 1px solid black;
+}
+P {
+    text-indent: 3em;
+}
+.div1 {
+    width: 200px;
+    height: 200px;
+}
+tbody td:hover{
+    background-color: red;
+}
